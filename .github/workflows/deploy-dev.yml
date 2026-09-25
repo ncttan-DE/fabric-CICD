@@ -28,6 +28,6 @@ jobs:
           FABRIC_TENANT_ID: ${{ secrets.FABRIC_TENANT_ID }}
           FABRIC_CLIENT_ID: ${{ secrets.FABRIC_CLIENT_ID }}
           FABRIC_CLIENT_SECRET: ${{ secrets.FABRIC_CLIENT_SECRET }}
-          FABRIC_DEV_WORKSPACE_ID: ${{ secrets.FABRIC_DEV_WORKSPACE_ID }}
+          FABRIC_WORKSPACE_ID: ${{ secrets.FABRIC_DEV_WORKSPACE_ID }}
         run: |
           python deploy.py

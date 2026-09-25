@@ -13,7 +13,7 @@ tenant_id = os.environ["FABRIC_TENANT_ID"]
 client_id = os.environ["FABRIC_CLIENT_ID"]
 client_secret = os.environ["FABRIC_CLIENT_SECRET"]
 
-workspace_id = os.environ["FABRIC_DEV_WORKSPACE_ID"]
+workspace_id = os.environ["FABRIC_WORKSPACE_ID"]
 
 root_directory = Path(__file__).resolve().parent
 repository_directory = root_directory / "resources"
