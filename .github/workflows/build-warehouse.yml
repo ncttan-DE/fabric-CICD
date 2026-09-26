@@ -24,6 +24,12 @@ jobs:
       - name: Build Warehouse project
         run: |
           dotnet build resources/wh1.Warehouse/wh1.sqlproj --configuration Release
+          
+      - name: Upload DACPAC
+        uses: actions/upload-artifact@v4
+        with:
+          name: wh1-dacpac
+          path: resources/wh1.Warehouse/bin/Release/*.dacpac
 
       - name: Find DACPAC
         run: |
