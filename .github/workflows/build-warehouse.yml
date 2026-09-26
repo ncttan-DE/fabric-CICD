@@ -1,0 +1,30 @@
+name: Build Warehouse DACPAC
+
+on:
+  push:
+    branches:
+      - test_dacpac_file
+    paths:
+      - 'resources/wh1.Warehouse/**'
+      - '.github/workflows/build-warehouse.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Build Warehouse project
+        run: |
+          dotnet build resources/wh1.Warehouse/wh1.sqlproj --configuration Release
+
+      - name: Find DACPAC
+        run: |
+          find resources/wh1.Warehouse -name "*.dacpac" -type f
